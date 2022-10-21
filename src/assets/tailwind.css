@@ -3,3 +3,7 @@
 @tailwind components;
 
 @tailwind utilities;
+
+svg:hover {
+  fill: #da4567;
+}
