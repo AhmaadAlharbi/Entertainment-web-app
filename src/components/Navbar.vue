@@ -1,20 +1,33 @@
 <template>
   <nav
     class="
+      lg:mx-7
       cursor-pointer
-      flex flex-col
-      justify-between
+      flex
+      lg:flex-col
+      justify-around
+      lg:justify-between
       items-center
       rounded-3xl
-      h-[860px]
+      lg:h-[860px]
       bg-SemiDarkBlue
-      w-[96px]
-      border
+      w-full
+      lg:w-[96px]
+      mt-10
     "
   >
     <!-- icons -->
     <!-- logo icon -->
-    <div class="space-y-10 mt-10 flex flex-col items-center">
+    <div
+      class="
+        lg:space-y-10
+        space-x-6
+        lg:space-x-0 lg:mt-10
+        flex
+        lg:flex-col
+        items-center
+      "
+    >
       <svg width="33" height="27" xmlns="http://www.w3.org/2000/svg">
         <path
           d="m26.463.408 3.2 6.4h-4.8l-3.2-6.4h-3.2l3.2 6.4h-4.8l-3.2-6.4h-3.2l3.2 6.4h-4.8l-3.2-6.4h-1.6a3.186 3.186 0 0 0-3.184 3.2l-.016 19.2a3.2 3.2 0 0 0 3.2 3.2h25.6a3.2 3.2 0 0 0 3.2-3.2V.408h-6.4Z"

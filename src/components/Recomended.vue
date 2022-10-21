@@ -1,19 +1,14 @@
 <template>
   <div class="">
     <!-- <h1 class="text-white">{{ show.title }}</h1> -->
-    <div v-for="(value, key, index) in show.thumbnail.trending" :key="key">
+    <div v-for="(value, key, index) in show.thumbnail.regular" :key="key">
       <!-- <h1 class="text-red-400">
         {{ value }} ==== {{ key }} ====== {{ index }}
       </h1> -->
-      <img
-        v-if="index == 0"
-        class="md:hidden rounded-xl my-4"
-        :src="value"
-        alt=""
-      />
+      <img v-if="index == 0" class="md:hidden rounded-xl" :src="value" alt="" />
       <img
         v-if="index == 1"
-        class="hidden rounded-xl md:flex"
+        class="hidden md:flex rounded-xl"
         :src="value"
         alt=""
       />
@@ -23,7 +18,7 @@
 
 <script>
 export default {
-  props: ["show"],
+  props: ["show", "data"],
 };
 </script>
 

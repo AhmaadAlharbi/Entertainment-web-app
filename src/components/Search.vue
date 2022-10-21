@@ -1,5 +1,5 @@
 <template>
-  <div class="flex translate-y-20 translate-x-40 items-center space-x-4">
+  <div class="ml-10 lg:ml-0 my-2 flex items-center space-x-4">
     <div>
       <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
         <path
