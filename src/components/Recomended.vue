@@ -20,7 +20,7 @@
         />
         <!-- Bookmark icon -->
         <div
-          v-if="index == 0 || index == 1"
+          v-if="index == 0"
           class="
             cursor-pointer
             absolute
