@@ -10,14 +10,48 @@
     >
       <Navbar class="lg:hidden" />
 
-      <Search />
-
+      <Search
+        @display-answer-1="getTitle"
+        :searchPlaceHolder="searchPlaceHolder"
+      />
+      <!-- Home page while typing to filter -->
+      <div v-if="filter">
+        <div
+          class="
+            flex flex-col
+            mx-auto
+            justify-center
+            items-center
+            lg:my-5
+            px-10
+          "
+        >
+          <h1 class="text-3xl text-left text-white self-start mb-3">
+            Found {{ search.length }} results for {{ filter }}
+          </h1>
+          <div
+            v-if="data.length"
+            class="
+              grid grid-cols-1
+              md:grid-cols-3
+              lg:grid-cols-4
+              gap-8
+              justify-items-center
+              content-center
+            "
+          >
+            <div v-for="show in search" :key="show">
+              <Recomended :show="show" />
+            </div>
+          </div>
+        </div>
+      </div>
       <!-- Recomnded -->
       <div
+        v-if="!filter"
         class="flex flex-col mx-auto justify-center items-center lg:my-5 px-10"
       >
         <h1 class="text-3xl text-left text-white self-start mb-3">Movies</h1>
-
         <div
           v-if="data.length"
           class="
@@ -51,6 +85,8 @@ export default {
   data() {
     return {
       data: json,
+      filter: "",
+      searchPlaceHolder: "Search for movies ",
     };
   },
   methods: {
@@ -59,6 +95,18 @@ export default {
       return data.filter((item) => {
         return item.category == "Movie";
       });
+    },
+    getTitle(title) {
+      this.filter = title;
+    },
+  },
+  computed: {
+    search() {
+      if (!this.data) {
+        return [];
+      }
+      this.data = this.data.filter((item) => item.category == "Movie");
+      return this.data.filter((item) => item.title.includes(this.filter));
     },
   },
 };

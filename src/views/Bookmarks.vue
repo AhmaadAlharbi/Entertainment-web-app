@@ -51,7 +51,9 @@
         v-if="!filter"
         class="flex flex-col mx-auto justify-center items-center lg:my-5 px-10"
       >
-        <h1 class="text-3xl text-left text-white self-start mb-3">TV Series</h1>
+        <h1 class="text-3xl text-left text-white self-start mb-3">
+          Bookmarked Movies
+        </h1>
         <div
           v-if="data.length"
           class="
@@ -71,8 +73,8 @@
     </div>
   </div>
 </template>
-  
-  <script>
+    
+    <script>
 import Navbar from "../components/Navbar.vue";
 import Search from "../components/Search.vue";
 import Trending from "../components/Trending.vue";
@@ -85,15 +87,15 @@ export default {
   data() {
     return {
       data: json,
+      searchPlaceHolder: "Search for Bookmarked shows",
       filter: "",
-      searchPlaceHolder: "Search for TV series",
     };
   },
   methods: {
     getData() {
       let data = this.data;
       return data.filter((item) => {
-        return item.category == "Movie";
+        return item.isBookmarked == true;
       });
     },
     getTitle(title) {
@@ -105,15 +107,12 @@ export default {
       if (!this.data) {
         return [];
       }
-      if (!this.filter) {
-        return this.data;
-      }
-      this.data = this.data.filter((item) => item.category == "TV Series");
+      this.data = this.data.filter((item) => item.isBookmarked == true);
       return this.data.filter((item) => item.title.includes(this.filter));
     },
   },
 };
 </script>
-  
-  <style>
+    
+    <style>
 </style>

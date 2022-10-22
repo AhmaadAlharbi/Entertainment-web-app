@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import Movies from "../views/Movies.vue";
 import TvShows from "../views/TvShows.vue";
+import Bookmarks from "../views/Bookmarks.vue";
 
 const routes = [
   {
@@ -18,6 +19,11 @@ const routes = [
     path: "/tv-shows",
     name: "TvShows",
     component: TvShows,
+  },
+  {
+    path: "/bookmarks",
+    name: "Bookmarks",
+    component: Bookmarks,
   },
 ];
 

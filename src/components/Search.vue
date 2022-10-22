@@ -9,15 +9,30 @@
       </svg>
     </div>
     <input
+      v-model="title"
+      @keyup="saveQ2"
       type="text"
       class="bg-DarkBlue border-none text-xl w-full"
-      placeholder="Search for movies or TV series"
+      :placeholder="searchPlaceHolder"
     />
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["filter", "searchPlaceHolder"],
+  data() {
+    return {
+      title: "",
+    };
+  },
+  methods: {
+    saveQ2() {
+      const answer1 = this.title;
+      this.$emit("display-answer-1", answer1);
+    },
+  },
+};
 </script>
 
 <style>
