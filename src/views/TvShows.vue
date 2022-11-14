@@ -93,7 +93,7 @@ export default {
     getData() {
       let data = this.data;
       return data.filter((item) => {
-        return item.category == "Movie";
+        return item.category == "TV Series";
       });
     },
     getTitle(title) {
