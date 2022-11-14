@@ -1,19 +1,22 @@
 # entertainment-web-app
 
-## Project setup
-```
-npm install
-```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+This is a solution to the [ entertainment-web-app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/entertainment-web-app-J-UhgAW1X).
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Overview
+
+### The challenge
+
+
+### Screenshot
+![entertainment-web-app  challenge](./preview.jpg)
+
+
+
+### Links
+
+- Solution URL: [Click here](https://www.frontendmentor.io/solutions/entertainment-web-app-vue-and-tailwindcss-R8xdzO3l1b)
+- Live Site URL: [Click here](https://entertainment-web-app-iota.vercel.app/)
+
+
